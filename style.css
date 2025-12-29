@@ -24,7 +24,6 @@ header {
 
 .profile { display: flex; align-items: center; gap: 40px; justify-content: center; text-align: left; }
 
-
 .logo-principal { 
     width: 130px; 
     height: auto; 
@@ -41,45 +40,48 @@ header {
 h1 { color: var(--cor-titulo); font-size: 2.2rem; margin: 5px 0 10px 0; }
 p { color: var(--cor-texto); max-width: 500px; margin-bottom: 20px; line-height: 1.5; }
 
-.social-links { display: flex; gap: 10px; }
+/* --- AQUI ESTÁ A CORREÇÃO DOS BOTÕES --- */
+.social-links { 
+    display: flex; 
+    gap: 10px; 
+    flex-wrap: wrap; /* Isso permite que os botões desçam se não couberem na tela */
+    justify-content: flex-start; /* Alinha à esquerda no PC */
+}
 
-/* --- BOTÕES --- */
 .btn-icon {
     background: var(--bg-fundo); border: 1px solid var(--bg-borda); color: var(--cor-texto);
     text-decoration: none; padding: 8px 16px; border-radius: 6px;
     font-size: 0.9rem; font-weight: 500; display: flex; align-items: center; gap: 8px;
     transition: 0.2s;
+    white-space: nowrap; /* Impede que o texto quebre dentro do botão */
 }
 .btn-icon:hover { border-color: var(--cor-destaque); color: var(--bg-fundo); background: var(--cor-destaque); transform: translateY(-2px); }
 
-/* Botão LinkedIn - Estilo Clean (Igual aos outros) */
+/* Estilo Específico: LinkedIn (Clean) */
 .btn-linkedin {
-    background-color: var(--bg-fundo); /* Fundo claro igual ao do site */
-    color: var(--cor-texto);           /* Texto cinza padrão */
-    border: 1px solid var(--bg-borda); /* Borda suave */
+    background-color: var(--bg-fundo);
+    color: var(--cor-texto);
+    border: 1px solid var(--bg-borda);
+}
+.btn-linkedin:hover {
+    border-color: #0077b5 !important;
+    color: #0077b5 !important;
+    background: white !important;
 }
 
-/* Botão GitHub - Estilo Clean */
+/* Estilo Específico: GitHub (Clean) */
 .btn-github {
     background-color: var(--bg-fundo);
     color: var(--cor-texto);
     border: 1px solid var(--bg-borda);
 }
-
 .btn-github:hover {
-    border-color: #333333; /* Cor escura do GitHub */
-    color: #333333;        
-    background: white;     
-    transform: translateY(-2px);
+    border-color: #333333 !important;
+    color: #333333 !important;
+    background: white !important;
 }
 
-/* Efeito ao passar o mouse (Hover) */
-.btn-linkedin:hover {
-    border-color: #0077b5; /* Azul do LinkedIn apenas na borda */
-    color: #0077b5;        /* Texto fica azul */
-    background: white;     /* Fundo fica branco puro */
-    transform: translateY(-2px);
-}
+/* --- FIM DOS BOTÕES --- */
 
 /* Projetos */
 .projects-section { padding: 60px 0; }
@@ -125,5 +127,9 @@ footer { text-align: center; padding: 40px; color: var(--cor-texto); font-size: 
 /* Responsividade */
 @media (max-width: 768px) {
     .profile { flex-direction: column; text-align: center; gap: 20px; }
-    .social-links { justify-content: center; }
+    
+    .social-links { 
+        justify-content: center; /* Centraliza os botões no mobile */
+        width: 100%; /* Garante que use a largura total */
+    }
 }
