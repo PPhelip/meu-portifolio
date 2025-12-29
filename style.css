@@ -40,12 +40,12 @@ header {
 h1 { color: var(--cor-titulo); font-size: 2.2rem; margin: 5px 0 10px 0; }
 p { color: var(--cor-texto); max-width: 500px; margin-bottom: 20px; line-height: 1.5; }
 
-/* --- AQUI ESTÁ A CORREÇÃO DOS BOTÕES --- */
+
 .social-links { 
     display: flex; 
     gap: 10px; 
-    flex-wrap: wrap; /* Isso permite que os botões desçam se não couberem na tela */
-    justify-content: flex-start; /* Alinha à esquerda no PC */
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
 }
 
 .btn-icon {
@@ -53,11 +53,11 @@ p { color: var(--cor-texto); max-width: 500px; margin-bottom: 20px; line-height:
     text-decoration: none; padding: 8px 16px; border-radius: 6px;
     font-size: 0.9rem; font-weight: 500; display: flex; align-items: center; gap: 8px;
     transition: 0.2s;
-    white-space: nowrap; /* Impede que o texto quebre dentro do botão */
+    white-space: nowrap; 
 }
 .btn-icon:hover { border-color: var(--cor-destaque); color: var(--bg-fundo); background: var(--cor-destaque); transform: translateY(-2px); }
 
-/* Estilo Específico: LinkedIn (Clean) */
+
 .btn-linkedin {
     background-color: var(--bg-fundo);
     color: var(--cor-texto);
@@ -81,9 +81,6 @@ p { color: var(--cor-texto); max-width: 500px; margin-bottom: 20px; line-height:
     background: white !important;
 }
 
-/* --- FIM DOS BOTÕES --- */
-
-/* Projetos */
 .projects-section { padding: 60px 0; }
 .section-title { font-size: 1.5rem; color: var(--cor-titulo); margin-bottom: 30px; font-weight: 700; }
 
@@ -124,12 +121,12 @@ p { color: var(--cor-texto); max-width: 500px; margin-bottom: 20px; line-height:
 
 footer { text-align: center; padding: 40px; color: var(--cor-texto); font-size: 0.85rem; border-top: 1px solid var(--bg-borda); margin-top: 40px;}
 
-/* Responsividade */
+
 @media (max-width: 768px) {
     .profile { flex-direction: column; text-align: center; gap: 20px; }
     
     .social-links { 
-        justify-content: center; /* Centraliza os botões no mobile */
-        width: 100%; /* Garante que use a largura total */
+        justify-content: center; 
+        width: 100%; 
     }
 }
