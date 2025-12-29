@@ -1,0 +1,129 @@
+:root {
+    --bg-fundo: #f4f4f5;     
+    --bg-elementos: #ffffff;  
+    --bg-borda: #d4d4d8;     
+    --cor-titulo: #18181b;  
+    --cor-texto: #52525b;     
+    --cor-destaque: #27272a;  
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'DM Sans', sans-serif; }
+
+body {
+    background-color: var(--bg-fundo);
+    color: var(--cor-texto);
+}
+
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+header { 
+    padding: 60px 0; 
+    background: var(--bg-elementos); 
+    border-bottom: 1px solid var(--bg-borda); 
+}
+
+.profile { display: flex; align-items: center; gap: 40px; justify-content: center; text-align: left; }
+
+
+.logo-principal { 
+    width: 130px; 
+    height: auto; 
+    border-radius: 50%; 
+    border: 4px solid var(--bg-fundo); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    background-color: #0B1120; 
+}
+
+.bio { max-width: 600px; }
+
+.tag { color: var(--cor-destaque); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.5px; text-transform: uppercase;}
+
+h1 { color: var(--cor-titulo); font-size: 2.2rem; margin: 5px 0 10px 0; }
+p { color: var(--cor-texto); max-width: 500px; margin-bottom: 20px; line-height: 1.5; }
+
+.social-links { display: flex; gap: 10px; }
+
+/* --- BOTÕES --- */
+.btn-icon {
+    background: var(--bg-fundo); border: 1px solid var(--bg-borda); color: var(--cor-texto);
+    text-decoration: none; padding: 8px 16px; border-radius: 6px;
+    font-size: 0.9rem; font-weight: 500; display: flex; align-items: center; gap: 8px;
+    transition: 0.2s;
+}
+.btn-icon:hover { border-color: var(--cor-destaque); color: var(--bg-fundo); background: var(--cor-destaque); transform: translateY(-2px); }
+
+/* Botão LinkedIn - Estilo Clean (Igual aos outros) */
+.btn-linkedin {
+    background-color: var(--bg-fundo); /* Fundo claro igual ao do site */
+    color: var(--cor-texto);           /* Texto cinza padrão */
+    border: 1px solid var(--bg-borda); /* Borda suave */
+}
+
+/* Botão GitHub - Estilo Clean */
+.btn-github {
+    background-color: var(--bg-fundo);
+    color: var(--cor-texto);
+    border: 1px solid var(--bg-borda);
+}
+
+.btn-github:hover {
+    border-color: #333333; /* Cor escura do GitHub */
+    color: #333333;        
+    background: white;     
+    transform: translateY(-2px);
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.btn-linkedin:hover {
+    border-color: #0077b5; /* Azul do LinkedIn apenas na borda */
+    color: #0077b5;        /* Texto fica azul */
+    background: white;     /* Fundo fica branco puro */
+    transform: translateY(-2px);
+}
+
+/* Projetos */
+.projects-section { padding: 60px 0; }
+.section-title { font-size: 1.5rem; color: var(--cor-titulo); margin-bottom: 30px; font-weight: 700; }
+
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+
+.card {
+    background: var(--bg-elementos); border-radius: 12px; overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--bg-borda); transition: 0.3s;
+}
+.card:hover { transform: translateY(-5px); border-color: var(--cor-destaque); }
+
+.card-image { height: 180px; position: relative; }
+.card-image img { width: 100%; height: 100%; object-fit: cover; opacity: 1; }
+
+.overlay {
+    position: absolute; inset: 0; background: rgba(0, 0, 0, 0.7);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: 0.3s;
+}
+.card-image:hover .overlay { opacity: 1; }
+
+.btn-view { background: var(--cor-destaque); color: var(--bg-elementos); padding: 10px 25px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+.btn-view:hover { background: #000; }
+
+.card-content { padding: 24px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.card h3 { font-size: 1.25rem; color: var(--cor-titulo); }
+
+.status { background: rgba(16, 185, 129, 0.1); color: #34d399; font-size: 0.7rem; padding: 3px 8px; border-radius: 4px; font-weight: 700; text-transform: uppercase; }
+
+.techs { margin-top: 20px; display: flex; gap: 8px; }
+.techs span { background: var(--bg-fundo); color: var(--cor-texto); font-size: 0.75rem; padding: 4px 10px; border-radius: 4px; font-weight: 600; }
+
+.placeholder { border: 2px dashed var(--bg-borda); background: transparent; box-shadow: none; }
+.centered { text-align: center; padding: 50px 20px; color: var(--bg-borda); }
+.icon-big { font-size: 2.5rem; display: block; margin-bottom: 10px; color: var(--bg-borda); }
+
+footer { text-align: center; padding: 40px; color: var(--cor-texto); font-size: 0.85rem; border-top: 1px solid var(--bg-borda); margin-top: 40px;}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .profile { flex-direction: column; text-align: center; gap: 20px; }
+    .social-links { justify-content: center; }
+}
